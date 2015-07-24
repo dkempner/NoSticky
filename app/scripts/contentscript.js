@@ -1,3 +1,4 @@
+var windowWidth = window.innerWidth;
 var stickies = $('*').filter(function() {
     var $this = $(this);
     var isFixed = $this.css('position').toLowerCase().indexOf('fixed') > -1;
@@ -14,8 +15,19 @@ var stickies = $('*').filter(function() {
     }
 
     var isCloseToTop = num < 5 && num > -5;
+    if (!isCloseToTop) return false;
 
-    return isCloseToTop;
+    var width = $this.width();
+    console.log('this width = ' + width);
+    var difference = windowWidth - width;
+    console.log('difference = ' + difference);
+
+    var percent = difference / windowWidth;
+    console.log('percent = ' + percent);
+    var within10Percent = percent <= 0.1;
+
+    return within10Percent;
+
 });
 
 stickies.css('position', 'relative');
