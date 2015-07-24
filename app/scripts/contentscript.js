@@ -1,4 +1,9 @@
 var windowWidth = window.innerWidth;
+var body = document.getElementsByTagName('body');
+var style = document.createElement('style');
+style.innerHTML = ".noSticky: {position: relative !imporant; width: 100% !important}";
+body.appendChild(style);
+".noSticky: {position: relative !imporant; width: 100% !important}"
 var stickies = $('*').filter(function() {
     var $this = $(this);
     var isFixed = $this.css('position').toLowerCase().indexOf('fixed') > -1;
@@ -30,5 +35,4 @@ var stickies = $('*').filter(function() {
 
 });
 
-stickies.css('position', 'relative !important');
-stickies.css('width', '100% !important');
+stickies.addClass('noSticky');
