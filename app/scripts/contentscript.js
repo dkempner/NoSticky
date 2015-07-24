@@ -1,7 +1,7 @@
 var windowWidth = window.innerWidth;
 var $body = $('body');
 var style = document.createElement('style');
-style.innerHTML = ".noSticky {position: relative !imporant; width: 100% !important}";
+style.innerHTML = "#noSticky {position: relative !imporant; width: 100% !important}";
 $body.append(style);
 var stickies = $('*').filter(function() {
     var $this = $(this);
@@ -30,4 +30,4 @@ var stickies = $('*').filter(function() {
 
 });
 
-stickies.addClass('noSticky');
+stickies.attr('id', 'noSticky');
