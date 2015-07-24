@@ -30,5 +30,5 @@ var stickies = $('*').filter(function() {
 
 });
 
-stickies.css('position', 'relative');
-stickies.css('width', '100%');
+stickies.css('position', 'relative !important');
+stickies.css('width', '100% !important');
